@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bennett Lawn Co. | Lawn Care & Yard Cleanup</title>
+  <meta
+    name="description"
+    content="Bennett Lawn Co. offers mowing, trimming, edging, blowing, and basic yard cleanup in Malvern, Hot Springs, Benton, Arkadelphia, Bismarck, and nearby Arkansas areas. Request a quote online."
+  />
+
+  <style>
+    :root{
+      --green-950:#172c1b;
+      --green-900:#1f3a24;
+      --green-800:#295231;
+      --green-700:#3d7045;
+      --green-600:#4f8759;
+      --green-100:#edf5ee;
+      --green-050:#f7fbf7;
+      --cream:#fffaf2;
+      --tan:#efe5d2;
+      --gold:#c5ab72;
+      --text:#243127;
+      --muted:#677268;
+      --white:#ffffff;
+      --border:rgba(31,58,36,0.12);
+      --shadow:0 18px 40px rgba(31,58,36,0.10);
+      --shadow-strong:0 24px 60px rgba(31,58,36,0.16);
+      --radius-xl:30px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(79,135,89,0.11), transparent 32%),
+        radial-gradient(circle at 95% 12%, rgba(197,171,114,0.12), transparent 26%),
+        linear-gradient(180deg, var(--cream), #f8f8f3 45%, #f3f7f2 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .section{padding:72px 0}
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(61,112,69,0.10);
+      color:var(--green-800);
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .section-title{
+      font-size:clamp(2rem, 5vw, 3.2rem);
+      line-height:1.02;
+      letter-spacing:-.05em;
+      color:var(--green-900);
+      margin-bottom:14px;
+    }
+
+    .section-subtitle{
+      max-width:760px;
+      color:var(--muted);
+      font-size:1.04rem;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,250,242,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      color:var(--green-900);
+      letter-spacing:-.03em;
+      font-size:1.15rem;
+    }
+
+    .brand-mark{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--green-800), var(--green-600));
+      color:var(--cream);
+      box-shadow:0 12px 26px rgba(41,82,49,0.24);
+      font-size:1.2rem;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      color:var(--green-900);
+      font-weight:700;
+      font-size:.96rem;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      border:none;
+      cursor:pointer;
+      padding:13px 20px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.95rem;
+      transition:.2s ease;
+    }
+
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--green-800), var(--green-600));
+      color:#fff;
+      box-shadow:0 14px 28px rgba(41,82,49,.22);
+    }
+    .btn-primary:hover{filter:brightness(.97)}
+    .btn-secondary{
+      background:#fff;
+      color:var(--green-900);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .hero{padding:72px 0 58px}
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .hero-copy h1{
+      font-size:clamp(2.6rem, 8vw, 5.5rem);
+      line-height:.94;
+      letter-spacing:-.07em;
+      color:var(--green-900);
+      margin-bottom:18px;
+      max-width:720px;
+    }
+
+    .hero-copy p{
+      max-width:700px;
+      font-size:1.08rem;
+      color:var(--muted);
+      margin-bottom:26px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .hero-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .pill{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.76);
+      border:1px solid var(--border);
+      color:var(--green-800);
+      font-weight:700;
+      font-size:.92rem;
+    }
+
+    .hero-card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:34px;
+      padding:20px;
+      box-shadow:var(--shadow-strong);
+    }
+
+    .hero-visual{
+      min-height:420px;
+      border-radius:26px;
+      overflow:hidden;
+      position:relative;
+      background-image:url('logo.png');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    .hero-badge{
+      position:relative;
+      z-index:2;
+      background:rgba(255,255,255,.9);
+      color:var(--green-900);
+      padding:18px;
+      border-radius:20px;
+      max-width:315px;
+      box-shadow:0 16px 32px rgba(31,58,36,.12);
+      border:1px solid rgba(255,255,255,.7);
+    }
+
+    .hero-badge h3{
+      font-size:1.5rem;
+      line-height:1;
+      margin-bottom:8px;
+      letter-spacing:-.04em;
+    }
+
+    .hero-badge p{
+      color:#506050;
+      font-size:.98rem;
+      margin:0;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .icon{
+      width:50px;
+      height:50px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:var(--green-100);
+      color:var(--green-900);
+      font-size:1.3rem;
+      margin-bottom:14px;
+    }
+
+    .card h3{
+      color:var(--green-900);
+      font-size:1.22rem;
+      margin-bottom:8px;
+      letter-spacing:-.03em;
+    }
+
+    .card p,
+    .card li{
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .card ul{margin-left:18px;margin-top:10px}
+
+    .strip{
+      background:linear-gradient(135deg, var(--green-950), var(--green-700));
+      color:#fff;
+      border-radius:32px;
+      padding:34px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:20px;
+      box-shadow:0 18px 40px rgba(31,58,36,.18);
+    }
+
+    .strip h2{
+      font-size:clamp(1.8rem, 4vw, 3rem);
+      line-height:1;
+      letter-spacing:-.05em;
+      margin-bottom:8px;
+    }
+
+    .strip p{max-width:760px;opacity:.92}
+
+    .before-after-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .compare-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .compare-card-content{padding:18px}
+
+    .compare-title{
+      font-size:1.16rem;
+      color:var(--green-900);
+      font-weight:800;
+      letter-spacing:-.03em;
+      margin-bottom:6px;
+    }
+
+    .compare-desc{
+      color:var(--muted);
+      font-size:.96rem;
+      margin-bottom:14px;
+    }
+
+    .compare-images{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    .mock-photo{
+      aspect-ratio: 4 / 4.3;
+      border-radius:16px;
+      overflow:hidden;
+      position:relative;
+      border:1px solid rgba(31,58,36,.08);
+      display:flex;
+      align-items:flex-end;
+      padding:12px;
+      color:#fff;
+      font-size:.88rem;
+      font-weight:800;
+      letter-spacing:.02em;
+    }
+
+    .mock-photo.before{
+      background:
+        linear-gradient(rgba(31,58,36,.15), rgba(31,58,36,.42)),
+        linear-gradient(145deg, #93a77d, #6b8558 40%, #7b684d 41%, #536643 100%);
+    }
+
+    .mock-photo.after{
+      background:
+        linear-gradient(rgba(31,58,36,.10), rgba(31,58,36,.28)),
+        linear-gradient(145deg, #b8d7af, #8fbe84 45%, #72a368 46%, #5f8f56 100%);
+    }
+
+    .mock-photo::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:repeating-linear-gradient(-6deg, rgba(255,255,255,.05) 0 8px, rgba(255,255,255,0) 8px 16px);
+      opacity:.5;
+    }
+
+    .mock-photo span{
+      position:relative;
+      z-index:1;
+      background:rgba(0,0,0,.22);
+      padding:6px 10px;
+      border-radius:999px;
+    }
+
+    .photo-note{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-top:16px;
+      max-width:760px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:30px;
+    }
+
+    .step{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .step-number{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--green-800);
+      color:#fff;
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .step h3{
+      color:var(--green-900);
+      margin-bottom:8px;
+      font-size:1.15rem;
+    }
+
+    .step p{color:var(--muted)}
+
+    .quote-wrap{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:22px;
+      align-items:start;
+      margin-top:30px;
+    }
+
+    .quote-info{
+      background:linear-gradient(135deg, var(--green-950), var(--green-700));
+      color:#fff;
+      border-radius:28px;
+      padding:28px;
+      box-shadow:0 18px 40px rgba(31,58,36,.18);
+    }
+
+    .quote-info h2{
+      font-size:2rem;
+      line-height:1;
+      letter-spacing:-.04em;
+      margin-bottom:12px;
+    }
+
+    .quote-info p{opacity:.92;margin-bottom:18px}
+
+    .mini-list{display:grid;gap:12px}
+
+    .mini-item{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      padding:14px;
+      font-size:.95rem;
+    }
+
+    form{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .field{display:grid;gap:7px}
+    .full{grid-column:1 / -1}
+
+    label{
+      color:var(--green-900);
+      font-size:.9rem;
+      font-weight:800;
+    }
+
+    input, select, textarea{
+      width:100%;
+      border:1px solid rgba(31,58,36,.16);
+      background:#fcfdfb;
+      border-radius:15px;
+      padding:13px 14px;
+      font:inherit;
+      color:var(--text);
+      outline:none;
+    }
+
+    input:focus, select:focus, textarea:focus{
+      border-color:var(--green-700);
+      box-shadow:0 0 0 4px rgba(79,135,89,.10);
+    }
+
+    textarea{min-height:125px;resize:vertical}
+
+    .form-note{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:12px;
+    }
+
+    .service-note{
+      margin-top:20px;
+      padding:16px 18px;
+      background:rgba(255,247,223,.75);
+      border:1px solid #e6d398;
+      border-radius:18px;
+      color:#5b4d1f;
+      font-size:.95rem;
+      font-weight:700;
+    }
+
+    footer{
+      padding:34px 0 42px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    footer strong{color:var(--green-900)}
+
+    @media (max-width: 980px){
+      .hero-grid,
+      .quote-wrap,
+      .strip{grid-template-columns:1fr}
+      .grid-3,
+      .before-after-grid,
+      .steps{grid-template-columns:1fr}
+      nav ul{display:none}
+      .hero{padding-top:50px}
+    }
+
+    @media (max-width: 640px){
+      .form-grid{grid-template-columns:1fr}
+      .hero-visual{min-height:320px}
+      .compare-images{grid-template-columns:1fr 1fr}
+      .section{padding:56px 0}
+      .hero-copy h1{font-size:clamp(2.4rem, 12vw, 4rem)}
+      .nav .btn{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#top" class="brand" aria-label="Bennett Lawn Co. Home">
+        <span class="brand-mark">🌿</span>
+        <span>Bennett Lawn Co.</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#results">Before & After</a></li>
+          <li><a href="#quote">Request Quote</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-primary" href="#quote">Get a Quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Local lawn care you can trust</div>
+          <h1>Clean cuts, clear communication, and yards that look better fast.</h1>
+          <p>
+            Bennett Lawn Co. offers mowing, trimming, edging, blowing, and basic yard cleanup.
+            We quote each yard individually so pricing stays fair, simple, and based on the work your yard actually needs.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#quote">Request a Quote</a>
+            <a class="btn btn-secondary" href="tel:+15015551234">Call or Text Us</a>
+          </div>
+
+          <div class="hero-points">
+            <span class="pill">One-time cuts</span>
+            <span class="pill">Overgrown yards</span>
+            <span class="pill">Recurring service</span>
+            <span class="pill">Quick quotes</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-visual" aria-label="Bennett Lawn Co. logo"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="eyebrow">Services</div>
+        <h2 class="section-title">What we can help with</h2>
+        <p class="section-subtitle">
+          We keep it practical: dependable mowing and yard cleanup with clear pricing before the work starts.
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">🚜</div>
+            <h3>Mowing</h3>
+            <p>
+              Lawn mowing for one-time jobs, first cuts, and recurring service. Larger or overgrown yards are quoted based on actual condition.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">✂️</div>
+            <h3>Trim + Edge</h3>
+            <p>
+              Weed-eating around fences, flower beds, trees, and tight areas, plus edging where needed for a cleaner finished look.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🍂</div>
+            <h3>Yard Cleanup</h3>
+            <p>
+              Basic cleanup for sticks, leaves, light debris, and overgrown areas that need extra attention before or after mowing.
+            </p>
+          </article>
+        </div>
+
+        <div class="service-note">
+          For safety and licensing reasons, we do not offer pesticides, herbicides, fertilizer, weed killer, tree work, chemical treatments, heavy hauling, retaining walls, irrigation, or electrical work.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="strip">
+          <div>
+            <h2>Need your yard handled soon?</h2>
+            <p>
+              If your grass has gotten away from you, no judgment. Send us your info and we’ll let you know what it will take to get it cleaned up.
+            </p>
+          </div>
+          <a class="btn btn-secondary" href="#quote">Start Your Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="eyebrow">Before & After</div>
+        <h2 class="section-title">The kind of difference we aim to make</h2>
+        <p class="section-subtitle">
+          We’ll add real before-and-after photos as we complete jobs. For now, this section shows the types of transformations we’re looking to document.
+        </p>
+
+        <div class="before-after-grid">
+          <article class="compare-card">
+            <div class="compare-card-content">
+              <div class="compare-title">Overgrown front yard cleanup</div>
+              <p class="compare-desc">A yard that needs mowing, trimming, and general cleanup.</p>
+              <div class="compare-images">
+                <div class="mock-photo before"><span>Before</span></div>
+                <div class="mock-photo after"><span>After</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="compare-card-content">
+              <div class="compare-title">Basic mow + edge</div>
+              <p class="compare-desc">A routine yard that needs a cleaner, more finished look.</p>
+              <div class="compare-images">
+                <div class="mock-photo before"><span>Before</span></div>
+                <div class="mock-photo after"><span>After</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="compare-card">
+            <div class="compare-card-content">
+              <div class="compare-title">Backyard cleanup</div>
+              <p class="compare-desc">Cleanup, trimming, and overall improvement for outdoor spaces.</p>
+              <div class="compare-images">
+                <div class="mock-photo before"><span>Before</span></div>
+                <div class="mock-photo after"><span>After</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="photo-note">
+          Have photos of the yard already? Send them with your quote request — it helps us price the job more accurately.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">How it works</div>
+        <h2 class="section-title">A simple process from quote to cut</h2>
+        <p class="section-subtitle">
+          We’re keeping this easy: tell us what you need, get a clear quote, and end up with a better-looking yard.
+        </p>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">1</div>
+            <h3>Request a quote</h3>
+            <p>
+              Send your address, contact info, and a few details about the yard. Photos are always helpful.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">2</div>
+            <h3>We review the job</h3>
+            <p>
+              We quote based on the work needed and let you know the price before anything begins.
+            </p>
+          </article>
+
+          <article class="step">
+            <div class="step-number">3</div>
+            <h3>We get it handled</h3>
+            <p>
+              Once approved, we schedule the job, complete the agreed work, and collect payment when finished.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quote">
+      <div class="container">
+        <div class="eyebrow">Request a quote</div>
+        <h2 class="section-title">Tell us what you need</h2>
+        <p class="section-subtitle">
+          Fill this out with as much detail as you can. If you have yard photos, even better.
+        </p>
+
+        <div class="quote-wrap">
+          <aside class="quote-info">
+            <h2>Get in touch</h2>
+            <p>
+              We currently serve Malvern, Hot Springs, Benton, Arkadelphia, Bismarck, and nearby areas. If you’re close by and need lawn care or yard cleanup, reach out and we’ll let you know when we can get you on the schedule.
+            </p>
+
+            <div class="mini-list">
+              <div class="mini-item"><strong>Service area:</strong> Malvern, Hot Springs, Benton, Arkadelphia, Bismarck, and nearby areas</div>
+              <div class="mini-item"><strong>Quotes:</strong> Each yard is priced based on the actual work needed</div>
+              <div class="mini-item"><strong>Payment:</strong> Due when the job is complete unless otherwise agreed</div>
+            </div>
+          </aside>
+
+          <form id="quoteForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="Name" type="text" placeholder="Your full name" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="Phone" type="tel" placeholder="Best number to text" required />
+              </div>
+
+              <div class="field full">
+                <label for="address">Service Address</label>
+                <input id="address" name="Service Address" type="text" placeholder="Street, city, state" required />
+              </div>
+
+              <div class="field">
+                <label for="service">Service Needed</label>
+                <select id="service" name="Service Needed" required>
+                  <option value="">Choose one</option>
+                  <option>Mowing</option>
+                  <option>Mowing + weed-eating</option>
+                  <option>Mowing + trim + blow off</option>
+                  <option>Overgrown yard</option>
+                  <option>Basic yard cleanup</option>
+                  <option>Recurring lawn care</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="timing">How soon?</label>
+                <select id="timing" name="Timing" required>
+                  <option value="">Choose one</option>
+                  <option>As soon as possible</option>
+                  <option>This week</option>
+                  <option>Next week</option>
+                  <option>Looking for recurring service</option>
+                  <option>Just getting a quote</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="details">Yard Details</label>
+                <textarea
+                  id="details"
+                  name="Yard Details"
+                  placeholder="Tell us about the yard, whether it's overgrown, fenced, hilly, has pets, or anything else we should know."
+                ></textarea>
+              </div>
+
+              <div class="field full">
+                <label for="photos">Photo Link (Optional)</label>
+                <input
+                  id="photos"
+                  name="Photo Link"
+                  type="text"
+                  placeholder="Paste a Google Drive, Facebook, or image link if you have one"
+                />
+              </div>
+
+              <div class="field full">
+                <button class="btn btn-primary" type="submit">Send Quote Request</button>
+                <p class="form-note">
+                  This button opens your email app with the quote details filled in. You can also call or text us directly.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong>Bennett Lawn Co.</strong> · Malvern, Arkansas area ·
+        Call/Text: <a href="tel:+15015551234">(501) 555-1234</a> ·
+        Email: <a href="mailto:rosescollege1@gmail.com">rosescollege1@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const quoteEmail = 'rosescollege1@gmail.com';
+    const quoteForm = document.getElementById('quoteForm');
+
+    quoteForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(quoteForm);
+      const name = formData.get('Name') || '';
+      const phone = formData.get('Phone') || '';
+      const address = formData.get('Service Address') || '';
+      const service = formData.get('Service Needed') || '';
+      const timing = formData.get('Timing') || '';
+      const details = formData.get('Yard Details') || '';
+      const photos = formData.get('Photo Link') || '';
+
+      const subject = encodeURIComponent(`Bennett Lawn Co. Quote Request - ${name}`);
+      const body = encodeURIComponent(
+        `New Bennett Lawn Co. quote request:\n\n` +
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Service Address: ${address}\n` +
+        `Service Needed: ${service}\n` +
+        `Timing: ${timing}\n\n` +
+        `Yard Details:\n${details}\n\n` +
+        `Photo Link:\n${photos}\n`
+      );
+
+      window.location.href = `mailto:${quoteEmail}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
