@@ -889,5 +889,37 @@
       window.location.href = `mailto:${quoteEmail}?subject=${subject}&body=${body}`;
     });
   </script>
+  <script>
+  const quoteForm = document.getElementById('quoteForm');
+  const quoteEmail = 'aiden.bd.bennett6372@gmail.com';
+
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const service = document.getElementById('service').value.trim();
+      const timing = document.getElementById('timing').value.trim();
+      const details = document.getElementById('details').value.trim();
+      const photos = document.getElementById('photos').value.trim();
+
+      const subject = encodeURIComponent(`Bennett Lawn Co. Quote Request - ${name || 'New Lead'}`);
+      const body = encodeURIComponent(
+        `New Bennett Lawn Co. quote request:\n\n` +
+        `Name: ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Service Address: ${address}\n` +
+        `Service Needed: ${service}\n` +
+        `Timing: ${timing}\n\n` +
+        `Yard Details:\n${details}\n\n` +
+        `Photo Link:\n${photos}\n`
+      );
+
+      window.location.href = `mailto:${quoteEmail}?subject=${subject}&body=${body}`;
+    });
+  }
+</script>
 </body>
 </html>
