@@ -17,9 +17,7 @@
       --green-700:#3d7045;
       --green-600:#4f8759;
       --green-100:#edf5ee;
-      --green-050:#f7fbf7;
       --cream:#fffaf2;
-      --tan:#efe5d2;
       --gold:#c5ab72;
       --text:#243127;
       --muted:#677268;
@@ -27,16 +25,14 @@
       --border:rgba(31,58,36,0.12);
       --shadow:0 18px 40px rgba(31,58,36,0.10);
       --shadow-strong:0 24px 60px rgba(31,58,36,0.16);
-      --radius-xl:30px;
       --radius-lg:22px;
-      --radius-md:16px;
       --max:1160px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:Arial, Helvetica, sans-serif;
       background:
         radial-gradient(circle at top left, rgba(79,135,89,0.11), transparent 32%),
         radial-gradient(circle at 95% 12%, rgba(197,171,114,0.12), transparent 26%),
@@ -148,12 +144,15 @@
     }
 
     .btn:hover{transform:translateY(-2px)}
+
     .btn-primary{
       background:linear-gradient(135deg, var(--green-800), var(--green-600));
       color:#fff;
       box-shadow:0 14px 28px rgba(41,82,49,.22);
     }
+
     .btn-primary:hover{filter:brightness(.97)}
+
     .btn-secondary{
       background:#fff;
       color:var(--green-900);
@@ -224,34 +223,10 @@
       overflow:hidden;
       position:relative;
       background-image:url('logo.png');
-      background-size:cover;
+      background-size:contain;
       background-position:center;
       background-repeat:no-repeat;
-    }
-
-    .hero-badge{
-      position:relative;
-      z-index:2;
-      background:rgba(255,255,255,.9);
-      color:var(--green-900);
-      padding:18px;
-      border-radius:20px;
-      max-width:315px;
-      box-shadow:0 16px 32px rgba(31,58,36,.12);
-      border:1px solid rgba(255,255,255,.7);
-    }
-
-    .hero-badge h3{
-      font-size:1.5rem;
-      line-height:1;
-      margin-bottom:8px;
-      letter-spacing:-.04em;
-    }
-
-    .hero-badge p{
-      color:#506050;
-      font-size:.98rem;
-      margin:0;
+      background-color:#fff;
     }
 
     .grid-3{
@@ -293,8 +268,6 @@
       color:var(--muted);
       font-size:.98rem;
     }
-
-    .card ul{margin-left:18px;margin-top:10px}
 
     .strip{
       background:linear-gradient(135deg, var(--green-950), var(--green-700));
@@ -355,7 +328,7 @@
     }
 
     .mock-photo{
-      aspect-ratio: 4 / 4.3;
+      aspect-ratio:4 / 4.3;
       border-radius:16px;
       overflow:hidden;
       position:relative;
@@ -522,6 +495,29 @@
       margin-top:12px;
     }
 
+    .status-message{
+      margin-top:14px;
+      padding:13px 15px;
+      border-radius:15px;
+      font-size:.95rem;
+      font-weight:800;
+      display:none;
+    }
+
+    .status-message.success{
+      display:block;
+      background:#edf8ef;
+      border:1px solid rgba(61,112,69,.25);
+      color:var(--green-900);
+    }
+
+    .status-message.error{
+      display:block;
+      background:#fff0ec;
+      border:1px solid rgba(150,62,35,.25);
+      color:#7a2f1c;
+    }
+
     .service-note{
       margin-top:20px;
       padding:16px 18px;
@@ -542,7 +538,7 @@
 
     footer strong{color:var(--green-900)}
 
-    @media (max-width: 980px){
+    @media (max-width:980px){
       .hero-grid,
       .quote-wrap,
       .strip{grid-template-columns:1fr}
@@ -553,7 +549,7 @@
       .hero{padding-top:50px}
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .form-grid{grid-template-columns:1fr}
       .hero-visual{min-height:320px}
       .compare-images{grid-template-columns:1fr 1fr}
@@ -606,6 +602,7 @@
             <span class="pill">Quick quotes</span>
           </div>
         </div>
+
         <div class="hero-card">
           <div class="hero-visual" aria-label="Bennett Lawn Co. logo"></div>
         </div>
@@ -773,7 +770,7 @@
             </div>
           </aside>
 
-          <form action="https://formsubmit.co/bennettlawnco@gmail.com" method="POST">   <input type="hidden" name="_subject" value="New Bennett Lawn Co. Quote Request" />   <input type="hidden" name="_template" value="table" />   <input type="hidden" name="_captcha" value="false" />   <input type="hidden" name="_next" value="https://www.bennettlawns.org/#quote" />
+          <form id="quoteForm">
             <div class="form-grid">
               <div class="field">
                 <label for="name">Name</label>
@@ -783,6 +780,11 @@
               <div class="field">
                 <label for="phone">Phone</label>
                 <input id="phone" name="Phone" type="tel" placeholder="Best number to text" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="Your email address" />
               </div>
 
               <div class="field full">
@@ -836,10 +838,11 @@
               </div>
 
               <div class="field full">
-                <button class="btn btn-primary" type="submit">Send Quote Request</button>
+                <button class="btn btn-primary" type="submit" id="submitQuoteButton">Send Quote Request</button>
                 <p class="form-note">
-                  This sends your quote request directly to Bennett Lawn Co. You can also call or text us directly.
+                  This sends your quote request directly to Bennett Lawn Co. If you do not hear back soon, call or text us at (501) 260-8955.
                 </p>
+                <div id="formStatus" class="status-message" aria-live="polite"></div>
               </div>
             </div>
           </form>
@@ -858,6 +861,53 @@
     </div>
   </footer>
 
-  
+  <script>
+    const quoteForm = document.getElementById('quoteForm');
+    const submitQuoteButton = document.getElementById('submitQuoteButton');
+    const formStatus = document.getElementById('formStatus');
+
+    /*
+      IMPORTANT:
+      1. Create the Google Apps Script web app.
+      2. Deploy it as a web app with access set to Anyone.
+      3. Paste the /exec web app URL below.
+    */
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzTKWly2xcYV8L1r38nSwKmfZaPLL3VSfxbo36hKJ6iBM4nq9QTUS1d13DB5SP9Fwfgbw/exec';
+
+    quoteForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL.includes('PASTE_YOUR')) {
+        formStatus.className = 'status-message error';
+        formStatus.textContent = 'The quote form is almost ready, but the website still needs the Google form link added. Please call or text (501) 260-8955 for now.';
+        return;
+      }
+
+      submitQuoteButton.disabled = true;
+      submitQuoteButton.textContent = 'Sending...';
+      formStatus.className = 'status-message';
+      formStatus.textContent = '';
+
+      try {
+        const formData = new FormData(quoteForm);
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors'
+        });
+
+        quoteForm.reset();
+        formStatus.className = 'status-message success';
+        formStatus.textContent = 'Thank you! Your quote request has been sent. Bennett Lawn Co. will be in touch soon.';
+      } catch (error) {
+        formStatus.className = 'status-message error';
+        formStatus.textContent = 'Something went wrong. Please call or text us at (501) 260-8955.';
+      }
+
+      submitQuoteButton.disabled = false;
+      submitQuoteButton.textContent = 'Send Quote Request';
+    });
+  </script>
 </body>
 </html>
