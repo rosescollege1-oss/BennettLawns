@@ -596,7 +596,7 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#quote">Request a Quote</a>
-            <a class="btn btn-secondary" href="tel:+15012608955">Call or Text Us</a>
+            <a class="btn btn-secondary" href="tel:+15012608955">501-260-8955</a>
           </div>
 
           <div class="hero-points">
@@ -773,7 +773,7 @@
             </div>
           </aside>
 
-          <form id="quoteForm">
+          <form action="https://formsubmit.co/aiden.bd.bennett6372@gmail.com" method="POST">   <input type="hidden" name="_subject" value="New Bennett Lawn Co. Quote Request" />   <input type="hidden" name="_template" value="table" />   <input type="hidden" name="_captcha" value="false" />   <input type="hidden" name="_next" value="https://www.bennettlawns.org/#quote" />
             <div class="form-grid">
               <div class="field">
                 <label for="name">Name</label>
@@ -838,7 +838,7 @@
               <div class="field full">
                 <button class="btn btn-primary" type="submit">Send Quote Request</button>
                 <p class="form-note">
-                  This button opens your email app with the quote details filled in. You can also call or text us directly.
+                  This sends your quote request directly to Bennett Lawn Co. You can also call or text us directly.
                 </p>
               </div>
             </div>
@@ -853,73 +853,11 @@
       <p>
         <strong>Bennett Lawn Co.</strong> · Malvern, Arkansas area ·
         Call/Text: <a href="tel:+15012608955">(501) 260-8955</a> ·
-        Email: <a href="mailto:rosescollege1@gmail.com">rosescollege1@gmail.com</a>
+        Email: <a href="mailto:aiden.bd.bennett6372@gmail.com">aiden.bd.bennett6372@gmail.com</a>
       </p>
     </div>
   </footer>
 
-  <script>
-    const quoteEmail = 'rosescollege1@gmail.com';
-    const quoteForm = document.getElementById('quoteForm');
-
-    quoteForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(quoteForm);
-      const name = formData.get('Name') || '';
-      const phone = formData.get('Phone') || '';
-      const address = formData.get('Service Address') || '';
-      const service = formData.get('Service Needed') || '';
-      const timing = formData.get('Timing') || '';
-      const details = formData.get('Yard Details') || '';
-      const photos = formData.get('Photo Link') || '';
-
-      const subject = encodeURIComponent(`Bennett Lawn Co. Quote Request - ${name}`);
-      const body = encodeURIComponent(
-        `New Bennett Lawn Co. quote request:\n\n` +
-        `Name: ${name}\n` +
-        `Phone: ${phone}\n` +
-        `Service Address: ${address}\n` +
-        `Service Needed: ${service}\n` +
-        `Timing: ${timing}\n\n` +
-        `Yard Details:\n${details}\n\n` +
-        `Photo Link:\n${photos}\n`
-      );
-
-      window.location.href = `mailto:${quoteEmail}?subject=${subject}&body=${body}`;
-    });
-  </script>
-  <script>
-  const quoteForm = document.getElementById('quoteForm');
-  const quoteEmail = 'aiden.bd.bennett6372@gmail.com';
-
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const address = document.getElementById('address').value.trim();
-      const service = document.getElementById('service').value.trim();
-      const timing = document.getElementById('timing').value.trim();
-      const details = document.getElementById('details').value.trim();
-      const photos = document.getElementById('photos').value.trim();
-
-      const subject = encodeURIComponent(`Bennett Lawn Co. Quote Request - ${name || 'New Lead'}`);
-      const body = encodeURIComponent(
-        `New Bennett Lawn Co. quote request:\n\n` +
-        `Name: ${name}\n` +
-        `Phone: ${phone}\n` +
-        `Service Address: ${address}\n` +
-        `Service Needed: ${service}\n` +
-        `Timing: ${timing}\n\n` +
-        `Yard Details:\n${details}\n\n` +
-        `Photo Link:\n${photos}\n`
-      );
-
-      window.location.href = `mailto:${quoteEmail}?subject=${subject}&body=${body}`;
-    });
-  }
-</script>
+  
 </body>
 </html>
